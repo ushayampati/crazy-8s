@@ -80,6 +80,29 @@ public class EightsPlayer extends Player {
 	   }
 	  }
 	  
+	  public int score() {
+		    int sum = 0;
+		    for (int i = 0; i < eightsHand.size(); i++) {
+		      Card card = eightsHand.getCard(i);
+		      int rank = card.getRank();
+		      if (rank == 8) {
+		        sum += 0;
+		      } else if (rank > 10) {
+		        sum += 10;
+		      } else {
+		        sum += rank;
+		      }
+		    }
+		    return sum;
+		  }
+
+		  
+		  public void displayScore() {
+		    System.out.println(getName() + " has " + score() + " points");
+		  }
+	  
+	  
+	  
 	  public void display() {
 	    getHand().display();
 	  }

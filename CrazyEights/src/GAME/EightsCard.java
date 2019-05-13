@@ -20,6 +20,18 @@ public class EightsCard extends Card {
 	    }
 	    return false;
 	  }
+	  
+	  public int scoreCard() {
+
+		    int rank = getRank();
+		    if (rank == 8) {
+		      return 0;
+		    } else if (rank > 10) {
+		      return 10;
+		    } else {
+		      return rank;
+		    }
+		  }
 
 
 	  //creation of a duplicate card for matching.

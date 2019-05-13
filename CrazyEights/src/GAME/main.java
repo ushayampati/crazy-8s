@@ -6,9 +6,13 @@ import java.util.Scanner;
 public class main {
 
 	  public static void main(String[] args) {
+		  
 
 	    Eights game = new Eights();
 	    Scanner in = new Scanner(System.in);
+	    int k =1;
+	    while(k ==1)
+	    {
 	        System.out.println(" CRAZY 8'S");
 	        System.out.println();
 	        System.out.println("Enter number of players: ");
@@ -26,6 +30,9 @@ public class main {
 	        	game.equipPlayer(no_ofplayers);
 	        }
 	        EightsPlayer player = game.getPlayer(0);
+	        for (int x = 0; x < no_ofplayers; x++) {
+	            game.getPlayer(x).displayScore();
+	          }
 	        while (!game.isDone()) 
 	        {
 	        	game.displayState();
@@ -33,7 +40,19 @@ public class main {
 	        	game.takeTurn(player);
 	            player = game.nextPlayer(player);
 	        }
-
+	        
+	        for (int x = 0; x < no_ofplayers; x++) {
+	            game.getPlayer(x).displayScore();
+	          }
+	        
+	        System.out.println("------------------------------------ ");
+	        
+	        System.out.println("Press 1 to play new game ");
+	        System.out.println("press 2 to exit");
+	        k = in.nextInt();
+	        
 	  }
+	    System.out.println("Thanks for playing");
+ }
 
 }
